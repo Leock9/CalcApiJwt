@@ -1,0 +1,280 @@
+{
+	"info": {
+		"_postman_id": "01821bcf-2f98-40de-a66b-e7a2cd495466",
+		"name": "CalcApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36749327"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"Leonardo Khouri\",\r\n  \"roles\": [\r\n    \"add\",\r\n    \"subtract\",\r\n    \"multiply\",\r\n    \"divide\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/user?username=Leonardo Khouri",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "Leonardo Khouri"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"Leonardo Khouri\",\r\n  \"password\": \"a6a4a420-72a2-4c82-9e87-8ed34d630339\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Calc",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"value": "Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6Ikxlb25hcmRvIEtob3VyaSIsIlJvbGUiOlsiYWRkIiwic3VidHJhY3QiLCJkaXZpZGUiXSwiYXVkIjoiQ2FsY0FwaSIsImlzcyI6IkNhbGNBcGkiLCJleHAiOjE3MzcwNzA2MzgsImlhdCI6MTczNjk4NDIzOCwibmJmIjoxNzM2OTg0MjM4fQ.vwyTFlXtNyFqot6EWQZ_ZoNRz8wOSUrHhszgWD7iN2M",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"number1\": 15,\r\n  \"number2\": 34,\r\n  \"operation\": \"multiply\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/calculator",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"calculator"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Calc Add",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Token",
+								"value": "Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6Ikxlb25hcmRvIEtob3VyaSIsIlJvbGUiOlsiYWRkIiwic3VidHJhY3QiLCJtdWx0aXBseSIsImRpdmlkZSJdLCJhdWQiOiJDYWxjQXBpIiwiaXNzIjoiQ2FsY0FwaSIsImV4cCI6MTczNzA2ODE4MiwiaWF0IjoxNzM2OTgxNzgyLCJuYmYiOjE3MzY5ODE3ODJ9.IE8jRIx0vL7fP10qXk6W-zo3xOWPWzNocCDJHA4eiAk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"number1\": 1,\r\n  \"number2\": 1,\r\n  \"operation\": \"add\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/calculator",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"calculator"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Calc Subtract",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Token",
+								"value": "Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6InVzZXIiLCJSb2xlIjoiQ2FsY3VsYXRvciIsImF1ZCI6IkNhbGNBcGkiLCJpc3MiOiJDYWxjQXBpIiwiZXhwIjoxNzM2OTgyMjEzLCJpYXQiOjE3MzY4OTU4MTMsIm5iZiI6MTczNjg5NTgxM30.pAp6gZtk4pgW134RK_8LzEDUoXE3mqUB6oVvDaXkNdk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"number1\": 1,\r\n  \"number2\": 1,\r\n  \"operation\": \"subtract\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/calculator",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"calculator"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Calc Divide",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Token",
+								"value": "Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6InVzZXIiLCJSb2xlIjoiQ2FsY3VsYXRvciIsImF1ZCI6IkNhbGNBcGkiLCJpc3MiOiJDYWxjQXBpIiwiZXhwIjoxNzM2OTgyMjEzLCJpYXQiOjE3MzY4OTU4MTMsIm5iZiI6MTczNjg5NTgxM30.pAp6gZtk4pgW134RK_8LzEDUoXE3mqUB6oVvDaXkNdk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"number1\": 15,\r\n  \"number2\": 3,\r\n  \"operation\": \"divide\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/calculator",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"calculator"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Calc Multi",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Token",
+								"value": "Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6InVzZXIiLCJSb2xlIjoiQ2FsY3VsYXRvciIsImF1ZCI6IkNhbGNBcGkiLCJpc3MiOiJDYWxjQXBpIiwiZXhwIjoxNzM2OTgyMjEzLCJpYXQiOjE3MzY4OTU4MTMsIm5iZiI6MTczNjg5NTgxM30.pAp6gZtk4pgW134RK_8LzEDUoXE3mqUB6oVvDaXkNdk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"number1\": 15,\r\n  \"number2\": 3,\r\n  \"operation\": \"multiply\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/calculator",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"calculator"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}
